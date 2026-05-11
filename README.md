@@ -21,6 +21,24 @@ The content is intentionally short. It is meant to merge with project-specific i
 
 ## Quick Install
 
+Install through npm and run the installer with `npx`:
+
+```bash
+npx @swarmclawai/andrej-karpathy-skills --list
+npx @swarmclawai/andrej-karpathy-skills --agent codex --dest /path/to/project
+```
+
+Or install the CLI globally:
+
+```bash
+npm install -g @swarmclawai/andrej-karpathy-skills
+andrej-karpathy-skills --agent cursor --dest /path/to/project
+```
+
+The CLI copies the right adapter from the npm package into the destination project.
+
+## Clone Install
+
 Clone once, then copy the right adapter into any project. The installer reads [`install/targets.json`](install/targets.json), copies from `adapters/<agent-id>/...`, and writes to the real path your agent expects.
 
 ```bash
@@ -96,6 +114,7 @@ Edit the canonical skill, then regenerate and verify:
 ```bash
 npm run generate
 npm run verify
+npm run pack:dry-run
 ```
 
 Generated adapters live under `adapters/<agent-id>/` and start with a comment that names their source. Do not edit generated adapters by hand; update `skills/karpathy-guidelines/SKILL.md` or `scripts/generate.mjs`.

@@ -19,6 +19,24 @@
 
 ## 快速安装
 
+通过 npm 直接运行安装器：
+
+```bash
+npx @swarmclawai/andrej-karpathy-skills --list
+npx @swarmclawai/andrej-karpathy-skills --agent codex --dest /path/to/project
+```
+
+也可以全局安装：
+
+```bash
+npm install -g @swarmclawai/andrej-karpathy-skills
+andrej-karpathy-skills --agent cursor --dest /path/to/project
+```
+
+CLI 会从 npm 包里的 `adapters/<agent-id>/...` 复制到目标项目中 agent 实际读取的位置。
+
+## Clone 安装
+
 ```bash
 git clone https://github.com/swarmclawai/andrej-karpathy-skills.git
 cd andrej-karpathy-skills

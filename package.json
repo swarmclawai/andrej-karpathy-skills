@@ -1,12 +1,27 @@
 {
-  "name": "andrej-karpathy-skills",
+  "name": "@swarmclawai/andrej-karpathy-skills",
   "version": "1.0.0",
-  "private": true,
   "type": "module",
   "description": "Karpathy-inspired coding-agent guidelines packaged for many agent runtimes.",
+  "bin": {
+    "andrej-karpathy-skills": "./scripts/install.mjs",
+    "karpathy-skills": "./scripts/install.mjs"
+  },
+  "files": [
+    ".claude-plugin",
+    "adapters",
+    "docs",
+    "install",
+    "scripts",
+    "skills",
+    "CURSOR.md",
+    "EXAMPLES.md",
+    "README.zh.md"
+  ],
   "scripts": {
     "generate": "node scripts/generate.mjs",
-    "verify": "node scripts/verify.mjs"
+    "verify": "node scripts/verify.mjs",
+    "pack:dry-run": "npm pack --dry-run"
   },
   "keywords": [
     "agent-skills",
@@ -23,5 +38,19 @@
     "openclaw",
     "karpathy"
   ],
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swarmclawai/andrej-karpathy-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/swarmclawai/andrej-karpathy-skills/issues"
+  },
+  "homepage": "https://github.com/swarmclawai/andrej-karpathy-skills#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

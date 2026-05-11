@@ -6,12 +6,19 @@ import process from "node:process";
 
 const rootDir = path.resolve(new URL("..", import.meta.url).pathname);
 const targetsPath = path.join(rootDir, "install/targets.json");
+const packagePath = path.join(rootDir, "package.json");
 
 const args = parseArgs(process.argv.slice(2));
 const matrix = JSON.parse(fs.readFileSync(targetsPath, "utf8"));
+const packageJson = JSON.parse(fs.readFileSync(packagePath, "utf8"));
 
 if (args.help) {
   printHelp();
+  process.exit(0);
+}
+
+if (args.version) {
+  console.log(packageJson.version);
   process.exit(0);
 }
 
@@ -85,6 +92,8 @@ function parseArgs(values) {
       parsed.dest = values[++index];
     } else if (value === "--global") {
       parsed.global = true;
+    } else if (value === "--version" || value === "-v") {
+      parsed.version = true;
     } else if (value === "--list") {
       parsed.list = true;
     } else if (value === "--help" || value === "-h") {
@@ -104,6 +113,9 @@ Usage:
   node scripts/install.mjs --list
   node scripts/install.mjs --agent codex --dest /path/to/project
   node scripts/install.mjs --agent claude --dest /path/to/project --global
+  npx @swarmclawai/andrej-karpathy-skills --agent openclaw --dest /path/to/project
+  npm install -g @swarmclawai/andrej-karpathy-skills
+  andrej-karpathy-skills --agent cursor --dest /path/to/project
 
 Options:
   --agent, -a   Agent id or alias from install/targets.json
@@ -111,5 +123,6 @@ Options:
   --global      Also install any supported user-level skill path
   --force       Overwrite existing files
   --list        List supported agents
+  --version     Print package version
 `);
 }
