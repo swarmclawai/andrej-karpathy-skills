@@ -2,7 +2,7 @@
 
 This package makes one canonical skill usable by the common instruction and skill-discovery conventions used by current coding agents.
 
-The target matrix in [`../install/targets.json`](../install/targets.json) is the source of truth. It was built from:
+Generated adapter files live under `adapters/<agent-id>/...`. The installer copies those adapter sources into the real project paths each agent expects. The target matrix in [`../install/targets.json`](../install/targets.json) is the source of truth for both `source` and `target`.
 
 - SwarmVault's installer target model: agent ids, file targets, and Agent Skills bundle directories.
 - SwarmClaw's provider registry: the CLI agents it can launch and the generic CLI provider set.
@@ -12,7 +12,7 @@ Research date: May 11, 2026.
 
 ## Public Format References
 
-| Format or agent | What this package ships | Reference |
+| Format or agent | Install target | Reference |
 | --- | --- | --- |
 | AGENTS.md | `AGENTS.md` | https://agents.md/ |
 | OpenAI Codex | `AGENTS.md` | https://openai.com/index/introducing-codex/ |
@@ -31,28 +31,28 @@ Research date: May 11, 2026.
 
 ## Core Targets
 
-| Agent id | Primary target |
-| --- | --- |
-| `codex` | `AGENTS.md` |
-| `claude` | `CLAUDE.md`, `.claude/skills/karpathy-guidelines/SKILL.md` |
-| `cursor` | `.cursor/rules/karpathy-guidelines.mdc`, `.cursor/skills/karpathy-guidelines/SKILL.md` |
-| `goose` | `AGENTS.md` |
-| `pi` | `AGENTS.md` |
-| `gemini` | `GEMINI.md`, `.gemini/skills/karpathy-guidelines/SKILL.md` |
-| `opencode` | `AGENTS.md`, `.opencode/skills/karpathy-guidelines/SKILL.md`, `.agents/skills/karpathy-guidelines/SKILL.md` |
-| `aider` | `CONVENTIONS.md`, `.aider.conf.yml` |
-| `copilot` | `.github/copilot-instructions.md`, `AGENTS.md` |
-| `trae` | `.trae/rules/karpathy-guidelines.md` |
-| `claw` | `.claw/skills/karpathy-guidelines/SKILL.md` |
-| `droid` | `.factory/rules/karpathy-guidelines.md` |
-| `kiro` | `.kiro/skills/karpathy-guidelines/SKILL.md`, `.kiro/steering/karpathy-guidelines.md` |
-| `hermes` | `AGENTS.md`, optional `~/.hermes/skills/karpathy-guidelines/SKILL.md` |
-| `antigravity` | `.agents/rules/karpathy-guidelines.md`, `.agents/workflows/karpathy-guidelines.md` |
-| `vscode` | `.github/copilot-instructions.md`, `.github/chatmodes/karpathy-guidelines.chatmode.md` |
+| Agent id | Adapter source example | Installs to |
+| --- | --- | --- |
+| `codex` | `adapters/codex/AGENTS.md` | `AGENTS.md` |
+| `claude` | `adapters/claude/CLAUDE.md` | `CLAUDE.md` |
+| `cursor` | `adapters/cursor/.cursor/rules/karpathy-guidelines.mdc` | `.cursor/rules/karpathy-guidelines.mdc` |
+| `goose` | `adapters/goose/AGENTS.md` | `AGENTS.md` |
+| `pi` | `adapters/pi/AGENTS.md` | `AGENTS.md` |
+| `gemini` | `adapters/gemini/GEMINI.md` | `GEMINI.md` |
+| `opencode` | `adapters/opencode/.opencode/skills/karpathy-guidelines/SKILL.md` | `.opencode/skills/karpathy-guidelines/SKILL.md` |
+| `aider` | `adapters/aider/CONVENTIONS.md` | `CONVENTIONS.md` |
+| `copilot` | `adapters/copilot/.github/copilot-instructions.md` | `.github/copilot-instructions.md` |
+| `trae` | `adapters/trae/.trae/rules/karpathy-guidelines.md` | `.trae/rules/karpathy-guidelines.md` |
+| `claw` | `adapters/claw/.claw/skills/karpathy-guidelines/SKILL.md` | `.claw/skills/karpathy-guidelines/SKILL.md` |
+| `droid` | `adapters/droid/.factory/rules/karpathy-guidelines.md` | `.factory/rules/karpathy-guidelines.md` |
+| `kiro` | `adapters/kiro/.kiro/skills/karpathy-guidelines/SKILL.md` | `.kiro/skills/karpathy-guidelines/SKILL.md` |
+| `hermes` | `adapters/hermes/AGENTS.md` | `AGENTS.md` |
+| `antigravity` | `adapters/antigravity/.agents/rules/karpathy-guidelines.md` | `.agents/rules/karpathy-guidelines.md` |
+| `vscode` | `adapters/vscode/.github/chatmodes/karpathy-guidelines.chatmode.md` | `.github/chatmodes/karpathy-guidelines.chatmode.md` |
 
 ## Extended Agent Skills Targets
 
-These follow the SwarmVault Agent Skills bundle convention. Each target receives a copy of `skills/karpathy-guidelines/SKILL.md`.
+These follow the SwarmVault Agent Skills bundle convention. Each target receives a copy of `skills/karpathy-guidelines/SKILL.md` from an adapter source under `adapters/<agent-id>/`.
 
 | Agent id | Skill target |
 | --- | --- |

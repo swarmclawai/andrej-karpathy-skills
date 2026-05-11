@@ -15,8 +15,8 @@
       "paths": [
         {
           "kind": "file",
-          "source": "AGENTS.md",
-          "target": "AGENTS.md"
+          "target": "AGENTS.md",
+          "source": "adapters/codex/AGENTS.md"
         }
       ],
       "globalPaths": []
@@ -32,20 +32,20 @@
       "paths": [
         {
           "kind": "file",
-          "source": "CLAUDE.md",
-          "target": "CLAUDE.md"
+          "target": "CLAUDE.md",
+          "source": "adapters/claude/CLAUDE.md"
         },
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".claude/skills/karpathy-guidelines/SKILL.md"
+          "target": ".claude/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/claude/.claude/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": "~/.claude/skills/karpathy-guidelines/SKILL.md"
+          "target": "~/.claude/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/claude/.claude/skills/karpathy-guidelines/SKILL.md"
         }
       ]
     },
@@ -60,13 +60,13 @@
       "paths": [
         {
           "kind": "file",
-          "source": ".cursor/rules/karpathy-guidelines.mdc",
-          "target": ".cursor/rules/karpathy-guidelines.mdc"
+          "target": ".cursor/rules/karpathy-guidelines.mdc",
+          "source": "adapters/cursor/.cursor/rules/karpathy-guidelines.mdc"
         },
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".cursor/skills/karpathy-guidelines/SKILL.md"
+          "target": ".cursor/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/cursor/.cursor/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -79,8 +79,8 @@
       "paths": [
         {
           "kind": "file",
-          "source": "AGENTS.md",
-          "target": "AGENTS.md"
+          "target": "AGENTS.md",
+          "source": "adapters/goose/AGENTS.md"
         }
       ],
       "globalPaths": []
@@ -93,8 +93,8 @@
       "paths": [
         {
           "kind": "file",
-          "source": "AGENTS.md",
-          "target": "AGENTS.md"
+          "target": "AGENTS.md",
+          "source": "adapters/pi/AGENTS.md"
         }
       ],
       "globalPaths": []
@@ -109,13 +109,13 @@
       "paths": [
         {
           "kind": "file",
-          "source": "GEMINI.md",
-          "target": "GEMINI.md"
+          "target": "GEMINI.md",
+          "source": "adapters/gemini/GEMINI.md"
         },
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".gemini/skills/karpathy-guidelines/SKILL.md"
+          "target": ".gemini/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/gemini/.gemini/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -130,18 +130,18 @@
       "paths": [
         {
           "kind": "file",
-          "source": "AGENTS.md",
-          "target": "AGENTS.md"
+          "target": "AGENTS.md",
+          "source": "adapters/opencode/AGENTS.md"
         },
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".opencode/skills/karpathy-guidelines/SKILL.md"
+          "target": ".opencode/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/opencode/.opencode/skills/karpathy-guidelines/SKILL.md"
         },
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".agents/skills/karpathy-guidelines/SKILL.md"
+          "target": ".agents/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/opencode/.agents/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -156,13 +156,13 @@
       "paths": [
         {
           "kind": "file",
-          "source": "CONVENTIONS.md",
-          "target": "CONVENTIONS.md"
+          "target": "CONVENTIONS.md",
+          "source": "adapters/aider/CONVENTIONS.md"
         },
         {
           "kind": "file",
-          "source": ".aider.conf.yml",
-          "target": ".aider.conf.yml"
+          "target": ".aider.conf.yml",
+          "source": "adapters/aider/.aider.conf.yml"
         }
       ],
       "globalPaths": []
@@ -177,18 +177,18 @@
       "paths": [
         {
           "kind": "file",
-          "source": ".github/copilot-instructions.md",
-          "target": ".github/copilot-instructions.md"
+          "target": ".github/copilot-instructions.md",
+          "source": "adapters/copilot/.github/copilot-instructions.md"
         },
         {
           "kind": "file",
-          "source": "AGENTS.md",
-          "target": "AGENTS.md"
+          "target": "AGENTS.md",
+          "source": "adapters/copilot/AGENTS.md"
         },
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".copilot/skills/karpathy-guidelines/SKILL.md"
+          "target": ".copilot/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/copilot/.copilot/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -203,8 +203,8 @@
       "paths": [
         {
           "kind": "file",
-          "source": ".trae/rules/karpathy-guidelines.md",
-          "target": ".trae/rules/karpathy-guidelines.md"
+          "target": ".trae/rules/karpathy-guidelines.md",
+          "source": "adapters/trae/.trae/rules/karpathy-guidelines.md"
         }
       ],
       "globalPaths": []
@@ -219,8 +219,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".claw/skills/karpathy-guidelines/SKILL.md"
+          "target": ".claw/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/claw/.claw/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -235,8 +235,8 @@
       "paths": [
         {
           "kind": "file",
-          "source": ".factory/rules/karpathy-guidelines.md",
-          "target": ".factory/rules/karpathy-guidelines.md"
+          "target": ".factory/rules/karpathy-guidelines.md",
+          "source": "adapters/droid/.factory/rules/karpathy-guidelines.md"
         }
       ],
       "globalPaths": []
@@ -251,13 +251,13 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".kiro/skills/karpathy-guidelines/SKILL.md"
+          "target": ".kiro/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/kiro/.kiro/skills/karpathy-guidelines/SKILL.md"
         },
         {
           "kind": "file",
-          "source": ".kiro/steering/karpathy-guidelines.md",
-          "target": ".kiro/steering/karpathy-guidelines.md"
+          "target": ".kiro/steering/karpathy-guidelines.md",
+          "source": "adapters/kiro/.kiro/steering/karpathy-guidelines.md"
         }
       ],
       "globalPaths": []
@@ -272,15 +272,15 @@
       "paths": [
         {
           "kind": "file",
-          "source": "AGENTS.md",
-          "target": "AGENTS.md"
+          "target": "AGENTS.md",
+          "source": "adapters/hermes/AGENTS.md"
         }
       ],
       "globalPaths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": "~/.hermes/skills/karpathy-guidelines/SKILL.md"
+          "target": "~/.hermes/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/hermes/.hermes/skills/karpathy-guidelines/SKILL.md"
         }
       ]
     },
@@ -292,13 +292,13 @@
       "paths": [
         {
           "kind": "file",
-          "source": ".agents/rules/karpathy-guidelines.md",
-          "target": ".agents/rules/karpathy-guidelines.md"
+          "target": ".agents/rules/karpathy-guidelines.md",
+          "source": "adapters/antigravity/.agents/rules/karpathy-guidelines.md"
         },
         {
           "kind": "file",
-          "source": ".agents/workflows/karpathy-guidelines.md",
-          "target": ".agents/workflows/karpathy-guidelines.md"
+          "target": ".agents/workflows/karpathy-guidelines.md",
+          "source": "adapters/antigravity/.agents/workflows/karpathy-guidelines.md"
         }
       ],
       "globalPaths": []
@@ -313,13 +313,13 @@
       "paths": [
         {
           "kind": "file",
-          "source": ".github/copilot-instructions.md",
-          "target": ".github/copilot-instructions.md"
+          "target": ".github/copilot-instructions.md",
+          "source": "adapters/vscode/.github/copilot-instructions.md"
         },
         {
           "kind": "file",
-          "source": ".github/chatmodes/karpathy-guidelines.chatmode.md",
-          "target": ".github/chatmodes/karpathy-guidelines.chatmode.md"
+          "target": ".github/chatmodes/karpathy-guidelines.chatmode.md",
+          "source": "adapters/vscode/.github/chatmodes/karpathy-guidelines.chatmode.md"
         }
       ],
       "globalPaths": []
@@ -334,13 +334,13 @@
       "paths": [
         {
           "kind": "file",
-          "source": ".windsurfrules",
-          "target": ".windsurfrules"
+          "target": ".windsurfrules",
+          "source": "adapters/windsurf/.windsurfrules"
         },
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".codeium/windsurf/skills/karpathy-guidelines/SKILL.md"
+          "target": ".codeium/windsurf/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/windsurf/.codeium/windsurf/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -355,18 +355,18 @@
       "paths": [
         {
           "kind": "file",
-          "source": ".clinerules/karpathy-guidelines.md",
-          "target": ".clinerules/karpathy-guidelines.md"
+          "target": ".clinerules/karpathy-guidelines.md",
+          "source": "adapters/cline/.clinerules/karpathy-guidelines.md"
         },
         {
           "kind": "file",
-          "source": "AGENTS.md",
-          "target": "AGENTS.md"
+          "target": "AGENTS.md",
+          "source": "adapters/cline/AGENTS.md"
         },
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".agents/skills/karpathy-guidelines/SKILL.md"
+          "target": ".agents/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/cline/.agents/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -381,8 +381,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".config/agents/skills/karpathy-guidelines/SKILL.md"
+          "target": ".config/agents/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/amp/.config/agents/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -397,8 +397,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".augment/skills/karpathy-guidelines/SKILL.md"
+          "target": ".augment/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/augment/.augment/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -413,8 +413,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".adal/skills/karpathy-guidelines/SKILL.md"
+          "target": ".adal/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/adal/.adal/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -429,8 +429,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".bob/skills/karpathy-guidelines/SKILL.md"
+          "target": ".bob/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/bob/.bob/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -445,8 +445,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".codebuddy/skills/karpathy-guidelines/SKILL.md"
+          "target": ".codebuddy/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/codebuddy/.codebuddy/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -461,8 +461,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".commandcode/skills/karpathy-guidelines/SKILL.md"
+          "target": ".commandcode/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/command-code/.commandcode/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -477,8 +477,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".continue/skills/karpathy-guidelines/SKILL.md"
+          "target": ".continue/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/continue/.continue/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -493,8 +493,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".snowflake/cortex/skills/karpathy-guidelines/SKILL.md"
+          "target": ".snowflake/cortex/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/cortex/.snowflake/cortex/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -509,8 +509,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".config/crush/skills/karpathy-guidelines/SKILL.md"
+          "target": ".config/crush/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/crush/.config/crush/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -525,8 +525,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".deepagents/agent/skills/karpathy-guidelines/SKILL.md"
+          "target": ".deepagents/agent/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/deepagents/.deepagents/agent/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -541,8 +541,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".firebender/skills/karpathy-guidelines/SKILL.md"
+          "target": ".firebender/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/firebender/.firebender/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -557,8 +557,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".iflow/skills/karpathy-guidelines/SKILL.md"
+          "target": ".iflow/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/iflow/.iflow/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -573,8 +573,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".junie/skills/karpathy-guidelines/SKILL.md"
+          "target": ".junie/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/junie/.junie/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -589,8 +589,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".kilocode/skills/karpathy-guidelines/SKILL.md"
+          "target": ".kilocode/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/kilo-code/.kilocode/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -605,8 +605,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".config/agents/skills/karpathy-guidelines/SKILL.md"
+          "target": ".config/agents/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/kimi/.config/agents/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -621,8 +621,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".kode/skills/karpathy-guidelines/SKILL.md"
+          "target": ".kode/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/kode/.kode/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -637,8 +637,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".mcpjam/skills/karpathy-guidelines/SKILL.md"
+          "target": ".mcpjam/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/mcpjam/.mcpjam/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -653,8 +653,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".vibe/skills/karpathy-guidelines/SKILL.md"
+          "target": ".vibe/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/mistral-vibe/.vibe/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -669,8 +669,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".mux/skills/karpathy-guidelines/SKILL.md"
+          "target": ".mux/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/mux/.mux/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -685,8 +685,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".neovate/skills/karpathy-guidelines/SKILL.md"
+          "target": ".neovate/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/neovate/.neovate/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -701,8 +701,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".openclaw/skills/karpathy-guidelines/SKILL.md"
+          "target": ".openclaw/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/openclaw/.openclaw/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -717,8 +717,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".openhands/skills/karpathy-guidelines/SKILL.md"
+          "target": ".openhands/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/openhands/.openhands/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -733,8 +733,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".pochi/skills/karpathy-guidelines/SKILL.md"
+          "target": ".pochi/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/pochi/.pochi/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -749,8 +749,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".qoder/skills/karpathy-guidelines/SKILL.md"
+          "target": ".qoder/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/qoder/.qoder/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -765,8 +765,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".qwen/skills/karpathy-guidelines/SKILL.md"
+          "target": ".qwen/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/qwen-code/.qwen/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -781,8 +781,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".config/agents/skills/karpathy-guidelines/SKILL.md"
+          "target": ".config/agents/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/replit/.config/agents/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -797,8 +797,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".roo/skills/karpathy-guidelines/SKILL.md"
+          "target": ".roo/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/roo-code/.roo/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -813,8 +813,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".trae-cn/skills/karpathy-guidelines/SKILL.md"
+          "target": ".trae-cn/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/trae-cn/.trae-cn/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -829,8 +829,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".agents/skills/karpathy-guidelines/SKILL.md"
+          "target": ".agents/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/warp/.agents/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []
@@ -845,8 +845,8 @@
       "paths": [
         {
           "kind": "skill",
-          "source": "skills/karpathy-guidelines/SKILL.md",
-          "target": ".zencoder/skills/karpathy-guidelines/SKILL.md"
+          "target": ".zencoder/skills/karpathy-guidelines/SKILL.md",
+          "source": "adapters/zencoder/.zencoder/skills/karpathy-guidelines/SKILL.md"
         }
       ],
       "globalPaths": []

@@ -2,7 +2,7 @@
 
 Karpathy-inspired coding-agent guidelines packaged for Claude Code, Codex, Cursor, Gemini CLI, OpenCode, Aider, GitHub Copilot, OpenClaw, Warp, Windsurf, Cline, and the wider SwarmVault/SwarmClaw agent matrix.
 
-The canonical source is [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md). Agent-specific files are generated from that skill so every supported tool receives the same behavioral guidance.
+The canonical source is [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md). Agent-specific files are generated under [`adapters/`](adapters/) so the repository root stays readable while every supported tool receives the same behavioral guidance.
 
 English | [Simplified Chinese](./README.zh.md)
 
@@ -21,7 +21,7 @@ The content is intentionally short. It is meant to merge with project-specific i
 
 ## Quick Install
 
-Clone once, then copy the right adapter into any project:
+Clone once, then copy the right adapter into any project. The installer reads [`install/targets.json`](install/targets.json), copies from `adapters/<agent-id>/...`, and writes to the real path your agent expects.
 
 ```bash
 git clone https://github.com/swarmclawai/andrej-karpathy-skills.git
@@ -44,23 +44,22 @@ node scripts/install.mjs --agent claude --global --force
 node scripts/install.mjs --agent hermes --global --force
 ```
 
-## Direct Files
+## Adapter Layout
 
-If you only need one file, use the adapter that your agent already reads:
+If you only need one file, copy the adapter source to the install target shown below:
 
-| Agent | File or folder |
+| Agent | Adapter source | Installs to |
 | --- | --- |
-| Codex, OpenCode, Goose, Pi | `AGENTS.md` |
-| Claude Code | `CLAUDE.md`, `.claude/skills/karpathy-guidelines/SKILL.md` |
-| Cursor | `.cursor/rules/karpathy-guidelines.mdc` |
-| Gemini CLI | `GEMINI.md` |
-| Aider | `CONVENTIONS.md`, optionally `.aider.conf.yml` |
-| GitHub Copilot | `.github/copilot-instructions.md`, `AGENTS.md` |
-| VS Code Copilot Chat | `.github/chatmodes/karpathy-guidelines.chatmode.md` |
-| OpenClaw | `.openclaw/skills/karpathy-guidelines/SKILL.md` |
-| Kiro | `.kiro/steering/karpathy-guidelines.md`, `.kiro/skills/karpathy-guidelines/SKILL.md` |
-| Warp, Cline, shared Agent Skills | `.agents/skills/karpathy-guidelines/SKILL.md` |
-| Windsurf | `.windsurfrules`, `.codeium/windsurf/skills/karpathy-guidelines/SKILL.md` |
+| Codex | `adapters/codex/AGENTS.md` | `AGENTS.md` |
+| Claude Code | `adapters/claude/CLAUDE.md` | `CLAUDE.md` |
+| Cursor | `adapters/cursor/.cursor/rules/karpathy-guidelines.mdc` | `.cursor/rules/karpathy-guidelines.mdc` |
+| Gemini CLI | `adapters/gemini/GEMINI.md` | `GEMINI.md` |
+| Aider | `adapters/aider/CONVENTIONS.md` | `CONVENTIONS.md` |
+| GitHub Copilot | `adapters/copilot/.github/copilot-instructions.md` | `.github/copilot-instructions.md` |
+| VS Code Copilot Chat | `adapters/vscode/.github/chatmodes/karpathy-guidelines.chatmode.md` | `.github/chatmodes/karpathy-guidelines.chatmode.md` |
+| OpenClaw | `adapters/openclaw/.openclaw/skills/karpathy-guidelines/SKILL.md` | `.openclaw/skills/karpathy-guidelines/SKILL.md` |
+| Warp or shared Agent Skills | `adapters/warp/.agents/skills/karpathy-guidelines/SKILL.md` | `.agents/skills/karpathy-guidelines/SKILL.md` |
+| Windsurf | `adapters/windsurf/.windsurfrules` | `.windsurfrules` |
 
 The full target matrix lives in [`install/targets.json`](install/targets.json).
 
@@ -80,7 +79,7 @@ See [`docs/agent-compatibility.md`](docs/agent-compatibility.md) for the researc
 
 ## Claude Code Plugin
 
-This repo still includes Claude plugin metadata:
+This repo still includes Claude plugin metadata at the root because plugin tooling expects it there:
 
 ```text
 .claude-plugin/plugin.json
@@ -99,7 +98,7 @@ npm run generate
 npm run verify
 ```
 
-Generated files start with a comment that names their source. Do not edit generated adapters by hand; update `skills/karpathy-guidelines/SKILL.md` or `scripts/generate.mjs`.
+Generated adapters live under `adapters/<agent-id>/` and start with a comment that names their source. Do not edit generated adapters by hand; update `skills/karpathy-guidelines/SKILL.md` or `scripts/generate.mjs`.
 
 ## Attribution
 

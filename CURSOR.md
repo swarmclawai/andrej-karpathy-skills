@@ -1,11 +1,11 @@
-# Using This Repo With Cursor
+# Using These Guidelines With Cursor
 
-Cursor reads the generated project rule at [`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc). The rule is committed with `alwaysApply: true`, so opening this folder in Cursor makes the guidelines available without extra setup.
+Cursor reads project rules from `.cursor/rules/`. This repository keeps the generated Cursor adapter under [`adapters/cursor/.cursor/rules/karpathy-guidelines.mdc`](adapters/cursor/.cursor/rules/karpathy-guidelines.mdc) so the repo root stays clean.
 
-To use the same guidance in another project:
+Install it into another project with:
 
 ```bash
 node scripts/install.mjs --agent cursor --dest /path/to/project
 ```
 
-The Cursor rule is generated from [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md). Edit the canonical skill and run `npm run generate` instead of editing the `.mdc` file directly.
+That command copies the adapter to `.cursor/rules/karpathy-guidelines.mdc` in the destination project. The Cursor rule is generated from [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md); edit the canonical skill and run `npm run generate` instead of editing the adapter directly.

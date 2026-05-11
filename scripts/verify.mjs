@@ -28,18 +28,40 @@ for (const requiredAgent of [
   assert(targets.agents.some((agent) => agent.id === requiredAgent), `missing ${requiredAgent}`);
 }
 
-for (const requiredPath of [
+for (const agent of targets.agents) {
+  for (const target of [...(agent.paths ?? []), ...(agent.globalPaths ?? [])]) {
+    assert(target.source?.startsWith(`adapters/${agent.id}/`), `bad adapter source for ${agent.id}: ${target.source}`);
+    assert(fs.existsSync(path.join(rootDir, target.source)), `missing ${target.source}`);
+  }
+}
+
+for (const requiredAdapter of [
+  "adapters/codex/AGENTS.md",
+  "adapters/claude/CLAUDE.md",
+  "adapters/gemini/GEMINI.md",
+  "adapters/aider/CONVENTIONS.md",
+  "adapters/cursor/.cursor/rules/karpathy-guidelines.mdc",
+  "adapters/vscode/.github/chatmodes/karpathy-guidelines.chatmode.md",
+  "adapters/opencode/.agents/skills/karpathy-guidelines/SKILL.md",
+  "adapters/openclaw/.openclaw/skills/karpathy-guidelines/SKILL.md"
+]) {
+  assert(fs.existsSync(path.join(rootDir, requiredAdapter)), `missing ${requiredAdapter}`);
+}
+
+for (const forbiddenRootPath of [
   "AGENTS.md",
   "CLAUDE.md",
   "GEMINI.md",
   "CONVENTIONS.md",
-  ".cursor/rules/karpathy-guidelines.mdc",
-  ".github/copilot-instructions.md",
-  ".github/chatmodes/karpathy-guidelines.chatmode.md",
-  ".agents/skills/karpathy-guidelines/SKILL.md",
-  ".openclaw/skills/karpathy-guidelines/SKILL.md"
+  ".cursor",
+  ".github",
+  ".agents",
+  ".openclaw",
+  ".qwen",
+  ".roo",
+  ".zencoder"
 ]) {
-  assert(fs.existsSync(path.join(rootDir, requiredPath)), `missing ${requiredPath}`);
+  assert(!fs.existsSync(path.join(rootDir, forbiddenRootPath)), `root adapter still exists: ${forbiddenRootPath}`);
 }
 
 console.log("Verification passed.");

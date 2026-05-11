@@ -190,7 +190,7 @@ const skillBundleAgents = Object.entries(skillBundleDirs).map(([id, dir]) => ({
   paths: [skillCopy(dir)]
 }));
 
-const agents = mergeAgentEntries([...directAgents, ...skillBundleAgents]);
+const agents = withAdapterSources(mergeAgentEntries([...directAgents, ...skillBundleAgents]));
 
 const sourceReferences = [
   {
@@ -312,26 +312,12 @@ function buildGeneratedFiles() {
   const { body, frontmatter } = readCanonicalSkill();
   const files = new Map();
 
-  set(files, "AGENTS.md", instructionFile(body, "AGENTS.md"));
-  set(files, "CLAUDE.md", instructionFile(body, "CLAUDE.md"));
-  set(files, "GEMINI.md", instructionFile(body, "GEMINI.md"));
-  set(files, "CONVENTIONS.md", instructionFile(body, "CONVENTIONS.md"));
-  set(files, ".windsurfrules", instructionFile(body, ".windsurfrules"));
-  set(files, ".clinerules/karpathy-guidelines.md", instructionFile(body, ".clinerules/karpathy-guidelines.md"));
-  set(files, ".trae/rules/karpathy-guidelines.md", instructionFile(body, ".trae/rules/karpathy-guidelines.md"));
-  set(files, ".factory/rules/karpathy-guidelines.md", instructionFile(body, ".factory/rules/karpathy-guidelines.md"));
-  set(files, ".kiro/steering/karpathy-guidelines.md", instructionFile(body, ".kiro/steering/karpathy-guidelines.md"));
-  set(files, ".agents/rules/karpathy-guidelines.md", instructionFile(body, ".agents/rules/karpathy-guidelines.md"));
-  set(files, ".agents/workflows/karpathy-guidelines.md", workflowFile(body));
-  set(files, ".github/copilot-instructions.md", instructionFile(body, ".github/copilot-instructions.md"));
-  set(files, ".github/chatmodes/karpathy-guidelines.chatmode.md", chatModeFile(body));
-  set(files, ".cursor/rules/karpathy-guidelines.mdc", cursorRuleFile(body));
-  set(files, ".aider.conf.yml", aiderConfigFile());
-
   for (const agent of agents) {
-    for (const target of agent.paths ?? []) {
+    for (const target of [...(agent.paths ?? []), ...(agent.globalPaths ?? [])]) {
       if (target.kind === "skill") {
-        set(files, target.target, renderSkill(frontmatter, body));
+        set(files, target.source, renderSkill(frontmatter, body));
+      } else {
+        set(files, target.source, renderFileAdapter(body, target.target));
       }
     }
   }
@@ -364,6 +350,22 @@ function instructionFile(body, target) {
 
 ${body}
 `;
+}
+
+function renderFileAdapter(body, target) {
+  if (target === ".aider.conf.yml") {
+    return aiderConfigFile();
+  }
+  if (target === ".agents/workflows/karpathy-guidelines.md") {
+    return workflowFile(body);
+  }
+  if (target === ".github/chatmodes/karpathy-guidelines.chatmode.md") {
+    return chatModeFile(body);
+  }
+  if (target === ".cursor/rules/karpathy-guidelines.mdc") {
+    return cursorRuleFile(body);
+  }
+  return instructionFile(body, target);
 }
 
 function workflowFile(body) {
@@ -507,13 +509,12 @@ function targetMatrix() {
 }
 
 function copy(target) {
-  return { kind: "file", source: target, target };
+  return { kind: "file", target };
 }
 
 function skillCopy(baseDir) {
   return {
     kind: "skill",
-    source: canonicalSkillPath,
     target: `${baseDir}/${skillName}/SKILL.md`
   };
 }
@@ -521,7 +522,6 @@ function skillCopy(baseDir) {
 function globalSkillCopy(baseDir) {
   return {
     kind: "skill",
-    source: canonicalSkillPath,
     target: `${baseDir}/${skillName}/SKILL.md`
   };
 }
@@ -584,6 +584,26 @@ function normalizeEntry(entry) {
   };
 }
 
+function withAdapterSources(entries) {
+  return entries.map((entry) => ({
+    ...entry,
+    paths: (entry.paths ?? []).map((target) => withAdapterSource(entry.id, target)),
+    globalPaths: (entry.globalPaths ?? []).map((target) => withAdapterSource(entry.id, target))
+  }));
+}
+
+function withAdapterSource(agentId, target) {
+  return {
+    ...target,
+    source: adapterSource(agentId, target.target)
+  };
+}
+
+function adapterSource(agentId, target) {
+  const normalizedTarget = target.startsWith("~/") ? target.slice(2) : target;
+  return `adapters/${agentId}/${normalizedTarget}`;
+}
+
 function unique(values) {
   return [...new Set(values)].sort();
 }
@@ -592,7 +612,7 @@ function uniqueTargets(targets) {
   const seen = new Set();
   const result = [];
   for (const target of targets) {
-    const key = `${target.kind}:${target.source}:${target.target}`;
+    const key = `${target.kind}:${target.target}`;
     if (seen.has(key)) continue;
     seen.add(key);
     result.push(target);
