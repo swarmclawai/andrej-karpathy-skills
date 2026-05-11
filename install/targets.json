@@ -1,0 +1,976 @@
+{
+  "schemaVersion": 1,
+  "repository": "swarmclawai/andrej-karpathy-skills",
+  "canonicalSkill": "skills/karpathy-guidelines/SKILL.md",
+  "generatedBy": "scripts/generate.mjs",
+  "description": "Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.",
+  "agents": [
+    {
+      "id": "codex",
+      "name": "OpenAI Codex",
+      "aliases": [
+        "codex-cli"
+      ],
+      "summary": "Uses root AGENTS.md project instructions.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": "AGENTS.md",
+          "target": "AGENTS.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "claude",
+      "name": "Claude Code",
+      "aliases": [
+        "claude-cli",
+        "claude-code"
+      ],
+      "summary": "Uses CLAUDE.md project memory and Agent Skills folders.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": "CLAUDE.md",
+          "target": "CLAUDE.md"
+        },
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".claude/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": "~/.claude/skills/karpathy-guidelines/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "aliases": [
+        "cursor-agent",
+        "cursor-cli"
+      ],
+      "summary": "Uses project rules in .cursor/rules.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": ".cursor/rules/karpathy-guidelines.mdc",
+          "target": ".cursor/rules/karpathy-guidelines.mdc"
+        },
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".cursor/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "goose",
+      "name": "Goose",
+      "aliases": [],
+      "summary": "Uses the shared AGENTS.md convention in SwarmVault.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": "AGENTS.md",
+          "target": "AGENTS.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "pi",
+      "name": "Pi",
+      "aliases": [],
+      "summary": "Uses the shared AGENTS.md convention in SwarmVault.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": "AGENTS.md",
+          "target": "AGENTS.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini CLI",
+      "aliases": [
+        "gemini-cli"
+      ],
+      "summary": "Uses GEMINI.md context files.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": "GEMINI.md",
+          "target": "GEMINI.md"
+        },
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".gemini/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "aliases": [
+        "opencode-cli"
+      ],
+      "summary": "Uses AGENTS.md rules and native Agent Skills folders.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": "AGENTS.md",
+          "target": "AGENTS.md"
+        },
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".opencode/skills/karpathy-guidelines/SKILL.md"
+        },
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".agents/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "aliases": [
+        "aider-cli"
+      ],
+      "summary": "Uses CONVENTIONS.md via --read or .aider.conf.yml.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": "CONVENTIONS.md",
+          "target": "CONVENTIONS.md"
+        },
+        {
+          "kind": "file",
+          "source": ".aider.conf.yml",
+          "target": ".aider.conf.yml"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "copilot",
+      "name": "GitHub Copilot",
+      "aliases": [
+        "copilot-cli"
+      ],
+      "summary": "Uses repository custom instructions and AGENTS.md agent instructions.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": ".github/copilot-instructions.md",
+          "target": ".github/copilot-instructions.md"
+        },
+        {
+          "kind": "file",
+          "source": "AGENTS.md",
+          "target": "AGENTS.md"
+        },
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".copilot/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "trae",
+      "name": "Trae",
+      "aliases": [
+        "trae-cli"
+      ],
+      "summary": "Uses project rules in .trae/rules.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": ".trae/rules/karpathy-guidelines.md",
+          "target": ".trae/rules/karpathy-guidelines.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "claw",
+      "name": "Claw",
+      "aliases": [
+        "openclaw-legacy"
+      ],
+      "summary": "Uses a Claw/OpenClaw compatible skill folder.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".claw/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "droid",
+      "name": "Factory Droid",
+      "aliases": [
+        "droid-cli"
+      ],
+      "summary": "Uses Factory project rules in .factory/rules.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": ".factory/rules/karpathy-guidelines.md",
+          "target": ".factory/rules/karpathy-guidelines.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "kiro",
+      "name": "Kiro",
+      "aliases": [
+        "kiro-cli"
+      ],
+      "summary": "Uses steering files and skill folders.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".kiro/skills/karpathy-guidelines/SKILL.md"
+        },
+        {
+          "kind": "file",
+          "source": ".kiro/steering/karpathy-guidelines.md",
+          "target": ".kiro/steering/karpathy-guidelines.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes",
+      "aliases": [
+        "hermes-agent"
+      ],
+      "summary": "Uses AGENTS.md plus a user-level Hermes skill.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": "AGENTS.md",
+          "target": "AGENTS.md"
+        }
+      ],
+      "globalPaths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": "~/.hermes/skills/karpathy-guidelines/SKILL.md"
+        }
+      ]
+    },
+    {
+      "id": "antigravity",
+      "name": "Antigravity",
+      "aliases": [],
+      "summary": "Uses .agents rules and workflows.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": ".agents/rules/karpathy-guidelines.md",
+          "target": ".agents/rules/karpathy-guidelines.md"
+        },
+        {
+          "kind": "file",
+          "source": ".agents/workflows/karpathy-guidelines.md",
+          "target": ".agents/workflows/karpathy-guidelines.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "vscode",
+      "name": "VS Code Copilot Chat",
+      "aliases": [
+        "github-copilot-chat"
+      ],
+      "summary": "Uses Copilot instructions and chat modes.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": ".github/copilot-instructions.md",
+          "target": ".github/copilot-instructions.md"
+        },
+        {
+          "kind": "file",
+          "source": ".github/chatmodes/karpathy-guidelines.chatmode.md",
+          "target": ".github/chatmodes/karpathy-guidelines.chatmode.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "windsurf",
+      "name": "Windsurf Rules",
+      "aliases": [
+        "windsurf-cli"
+      ],
+      "summary": "Uses a .windsurfrules file and the Windsurf skill path.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": ".windsurfrules",
+          "target": ".windsurfrules"
+        },
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".codeium/windsurf/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "cline",
+      "name": "Cline Rules",
+      "aliases": [
+        "cline-cli"
+      ],
+      "summary": "Uses .clinerules and also supports AGENTS.md.",
+      "paths": [
+        {
+          "kind": "file",
+          "source": ".clinerules/karpathy-guidelines.md",
+          "target": ".clinerules/karpathy-guidelines.md"
+        },
+        {
+          "kind": "file",
+          "source": "AGENTS.md",
+          "target": "AGENTS.md"
+        },
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".agents/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "amp",
+      "name": "Amp",
+      "aliases": [
+        "amp-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .config/agents/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".config/agents/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "augment",
+      "name": "Augment",
+      "aliases": [
+        "augment-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .augment/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".augment/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "adal",
+      "name": "AdaL",
+      "aliases": [
+        "adal-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .adal/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".adal/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "bob",
+      "name": "Bob",
+      "aliases": [
+        "bob-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .bob/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".bob/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "codebuddy",
+      "name": "CodeBuddy",
+      "aliases": [
+        "codebuddy-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .codebuddy/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".codebuddy/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "command-code",
+      "name": "Command Code",
+      "aliases": [
+        "command-code-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .commandcode/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".commandcode/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "continue",
+      "name": "Continue",
+      "aliases": [
+        "continue-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .continue/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".continue/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "cortex",
+      "name": "Cortex",
+      "aliases": [
+        "cortex-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .snowflake/cortex/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".snowflake/cortex/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "crush",
+      "name": "Crush",
+      "aliases": [
+        "crush-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .config/crush/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".config/crush/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "deepagents",
+      "name": "Deep Agents",
+      "aliases": [
+        "deepagents-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .deepagents/agent/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".deepagents/agent/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "firebender",
+      "name": "Firebender",
+      "aliases": [
+        "firebender-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .firebender/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".firebender/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "iflow",
+      "name": "iFlow",
+      "aliases": [
+        "iflow-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .iflow/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".iflow/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "junie",
+      "name": "Junie",
+      "aliases": [
+        "junie-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .junie/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".junie/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "kilo-code",
+      "name": "Kilo Code",
+      "aliases": [
+        "kilo-code-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .kilocode/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".kilocode/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "kimi",
+      "name": "Kimi",
+      "aliases": [
+        "kimi-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .config/agents/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".config/agents/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "kode",
+      "name": "Kode",
+      "aliases": [
+        "kode-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .kode/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".kode/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "mcpjam",
+      "name": "MCPJam",
+      "aliases": [
+        "mcpjam-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .mcpjam/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".mcpjam/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "mistral-vibe",
+      "name": "Mistral Vibe",
+      "aliases": [
+        "mistral-vibe-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .vibe/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".vibe/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "mux",
+      "name": "Mux",
+      "aliases": [
+        "mux-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .mux/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".mux/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "neovate",
+      "name": "Neovate",
+      "aliases": [
+        "neovate-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .neovate/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".neovate/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "aliases": [
+        "openclaw-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .openclaw/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".openclaw/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "openhands",
+      "name": "OpenHands",
+      "aliases": [
+        "openhands-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .openhands/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".openhands/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "pochi",
+      "name": "Pochi",
+      "aliases": [
+        "pochi-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .pochi/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".pochi/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "qoder",
+      "name": "Qoder",
+      "aliases": [
+        "qoder-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .qoder/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".qoder/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "qwen-code",
+      "name": "Qwen Code",
+      "aliases": [
+        "qwen-code-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .qwen/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".qwen/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "replit",
+      "name": "Replit",
+      "aliases": [
+        "replit-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .config/agents/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".config/agents/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "roo-code",
+      "name": "Roo Code",
+      "aliases": [
+        "roo-code-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .roo/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".roo/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "trae-cn",
+      "name": "TRAE CN",
+      "aliases": [
+        "trae-cn-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .trae-cn/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".trae-cn/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "warp",
+      "name": "Warp",
+      "aliases": [
+        "warp-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .agents/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".agents/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    },
+    {
+      "id": "zencoder",
+      "name": "Zencoder",
+      "aliases": [
+        "zencoder-cli"
+      ],
+      "summary": "Uses an Agent Skills bundle under .zencoder/skills.",
+      "paths": [
+        {
+          "kind": "skill",
+          "source": "skills/karpathy-guidelines/SKILL.md",
+          "target": ".zencoder/skills/karpathy-guidelines/SKILL.md"
+        }
+      ],
+      "globalPaths": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "agents-md",
+      "title": "AGENTS.md open format",
+      "url": "https://agents.md/",
+      "appliesTo": [
+        "codex",
+        "opencode",
+        "copilot",
+        "goose",
+        "pi",
+        "cline"
+      ]
+    },
+    {
+      "id": "openai-codex",
+      "title": "OpenAI Codex AGENTS.md guidance",
+      "url": "https://openai.com/index/introducing-codex/",
+      "appliesTo": [
+        "codex"
+      ]
+    },
+    {
+      "id": "claude-memory",
+      "title": "Claude Code memory files",
+      "url": "https://docs.claude.com/en/docs/claude-code/memory",
+      "appliesTo": [
+        "claude"
+      ]
+    },
+    {
+      "id": "claude-skills",
+      "title": "Claude Code Agent Skills",
+      "url": "https://docs.claude.com/en/docs/claude-code/skills",
+      "appliesTo": [
+        "claude"
+      ]
+    },
+    {
+      "id": "cursor-rules",
+      "title": "Cursor project rules",
+      "url": "https://docs.cursor.com/context/rules",
+      "appliesTo": [
+        "cursor"
+      ]
+    },
+    {
+      "id": "gemini-md",
+      "title": "Gemini CLI GEMINI.md files",
+      "url": "https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/gemini-md.md",
+      "appliesTo": [
+        "gemini"
+      ]
+    },
+    {
+      "id": "copilot-instructions",
+      "title": "GitHub Copilot repository custom instructions",
+      "url": "https://docs.github.com/en/copilot/how-tos/custom-instructions/adding-repository-custom-instructions-for-github-copilot",
+      "appliesTo": [
+        "copilot",
+        "vscode"
+      ]
+    },
+    {
+      "id": "opencode-rules",
+      "title": "OpenCode rules and AGENTS.md",
+      "url": "https://opencode.ai/docs/rules/",
+      "appliesTo": [
+        "opencode"
+      ]
+    },
+    {
+      "id": "opencode-skills",
+      "title": "OpenCode Agent Skills",
+      "url": "https://opencode.ai/docs/skills",
+      "appliesTo": [
+        "opencode"
+      ]
+    },
+    {
+      "id": "aider-conventions",
+      "title": "Aider coding conventions",
+      "url": "https://aider.chat/docs/usage/conventions.html",
+      "appliesTo": [
+        "aider"
+      ]
+    },
+    {
+      "id": "openclaw-skills",
+      "title": "OpenClaw Agent Skills",
+      "url": "https://docs.openclaw.ai/tools/skills",
+      "appliesTo": [
+        "openclaw",
+        "claw"
+      ]
+    },
+    {
+      "id": "kiro-steering",
+      "title": "Kiro steering",
+      "url": "https://kiro.dev/docs/steering/",
+      "appliesTo": [
+        "kiro"
+      ]
+    },
+    {
+      "id": "warp-skills",
+      "title": "Warp Agent Skills",
+      "url": "https://docs.warp.dev/agent-platform/capabilities/skills",
+      "appliesTo": [
+        "warp"
+      ]
+    },
+    {
+      "id": "cline-rules",
+      "title": "Cline rules",
+      "url": "https://docs.cline.bot/features/cline-rules/overview",
+      "appliesTo": [
+        "cline"
+      ]
+    }
+  ]
+}

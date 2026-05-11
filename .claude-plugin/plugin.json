@@ -1,11 +1,21 @@
 {
   "name": "andrej-karpathy-skills",
-  "description": "Behavioral guidelines to reduce common LLM coding mistakes, derived from Andrej Karpathy's observations on LLM coding pitfalls",
+  "description": "Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.",
   "version": "1.0.0",
   "author": {
-    "name": "forrestchang"
+    "name": "SwarmClaw AI and contributors",
+    "url": "https://github.com/swarmclawai"
   },
   "license": "MIT",
-  "keywords": ["guidelines", "best-practices", "coding", "karpathy"],
-  "skills": ["./skills/karpathy-guidelines"]
+  "keywords": [
+    "agent-skills",
+    "agents-md",
+    "coding-agents",
+    "guidelines",
+    "best-practices",
+    "karpathy"
+  ],
+  "skills": [
+    "./skills/karpathy-guidelines"
+  ]
 }

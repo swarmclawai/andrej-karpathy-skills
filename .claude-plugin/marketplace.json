@@ -2,25 +2,38 @@
   "name": "karpathy-skills",
   "id": "karpathy-skills",
   "owner": {
-    "name": "forrestchang"
+    "name": "swarmclawai",
+    "url": "https://github.com/swarmclawai"
   },
   "metadata": {
-    "description": "Behavioral guidelines to reduce common LLM coding mistakes, derived from Andrej Karpathy's observations",
-    "version": "1.0.0"
+    "description": "Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.",
+    "version": "1.0.0",
+    "repository": "https://github.com/swarmclawai/andrej-karpathy-skills",
+    "tags": [
+      "agent-skills",
+      "agents-md",
+      "coding-agents",
+      "claude-code",
+      "codex",
+      "cursor",
+      "gemini-cli",
+      "openclaw",
+      "karpathy"
+    ]
   },
   "plugins": [
     {
       "name": "andrej-karpathy-skills",
       "source": "./",
-      "description": "Behavioral guidelines to reduce common LLM coding mistakes: Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution",
+      "description": "Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria.",
       "version": "1.0.0",
       "author": {
-        "name": "forrestchang"
+        "name": "SwarmClaw AI and contributors"
       },
       "keywords": [
-        "guidelines",
-        "best-practices",
-        "coding",
+        "agent-skills",
+        "agents-md",
+        "coding-agents",
         "karpathy"
       ],
       "category": "workflow"

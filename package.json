@@ -1,0 +1,27 @@
+{
+  "name": "andrej-karpathy-skills",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Karpathy-inspired coding-agent guidelines packaged for many agent runtimes.",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "keywords": [
+    "agent-skills",
+    "agents-md",
+    "coding-agents",
+    "ai-agents",
+    "claude-code",
+    "codex",
+    "cursor",
+    "gemini-cli",
+    "opencode",
+    "aider",
+    "copilot",
+    "openclaw",
+    "karpathy"
+  ],
+  "license": "MIT"
+}
