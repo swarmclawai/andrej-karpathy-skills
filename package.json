@@ -4,8 +4,8 @@
   "type": "module",
   "description": "Karpathy-inspired coding-agent guidelines packaged for many agent runtimes.",
   "bin": {
-    "andrej-karpathy-skills": "./scripts/install.mjs",
-    "karpathy-skills": "./scripts/install.mjs"
+    "andrej-karpathy-skills": "scripts/install.mjs",
+    "karpathy-skills": "scripts/install.mjs"
   },
   "files": [
     ".claude-plugin",
